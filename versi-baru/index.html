@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Versi Baru — KasirCepat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/version.css" />
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <img
+            src="../assets/icon/kasir-cepat.png"
+            alt="KasirCepat Logo"
+            class="logo-image"
+          />
+          <span class="logo-text">KasirCepat</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Beranda</a>
+          <a href="../panduan/index.html">Panduan</a>
+          <a href="../harga/index.html">Harga</a>
+          <a href="../index.html#download">Unduh</a>
+          <a
+            href="../beli/index.html"
+            class="nav-cta"
+            style="padding: 8px 18px; font-size: 14px"
+            >Beli Pro</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="vc-hero">
+      <div class="container">
+        <div class="section-label">Pembaruan</div>
+        <h1>Cek Versi<br />KasirCepat</h1>
+        <p id="vc-subtitle">Memuat informasi versi…</p>
+      </div>
+    </section>
+
+    <!-- STATUS CARD -->
+    <div class="container">
+      <!-- loading state -->
+      <div class="vc-loading" id="vc-loading">
+        <div class="spinner"></div>
+        <span>Memeriksa versi…</span>
+      </div>
+
+      <!-- populated by JS -->
+      <div class="vc-card" id="vc-card" style="display: none">
+        <div class="vc-status-icon" id="vc-icon"></div>
+        <div class="vc-status-label" id="vc-badge"></div>
+        <div class="vc-title" id="vc-title"></div>
+        <p class="vc-desc" id="vc-desc"></p>
+
+        <div class="vc-versions" id="vc-versions"></div>
+        <div class="vc-actions" id="vc-actions"></div>
+        <p class="vc-platform-note" id="vc-platform-note"></p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <img
+              src="../assets/icon/kasir-cepat.png"
+              alt="KasirCepat Logo"
+              class="logo-image"
+            />
+            <span class="logo-text">KasirCepat</span>
+          </a>
+          <p class="footer-tagline">Tokomu, Datamu, Kendalimu.</p>
+          <p class="footer-flagodna">
+            Bagian dari ekosistem
+            <a href="https://flagodna.com" target="_blank" rel="noopener"
+              >Flagodna</a
+            >
+            — studio teknologi privacy-first untuk kehidupan sehari-hari.
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Produk</h5>
+            <a href="#fitur">Fitur</a>
+            <a href="#paket">Paket</a>
+            <a href="#download">Unduh</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="../documents/kebijakan-privasi/index.html"
+              >Kebijakan Privasi</a
+            >
+            <a href="../documents/syarat-penggunaan/index.html"
+              >Syarat Penggunaan</a
+            >
+            <a href="../documents/kontak/index.html">Kontak</a>
+          </div>
+          <div class="footer-col">
+            <h5>Komunitas</h5>
+            <a
+              href="https://github.com/Flagodna-Developer/kasir-cepat"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a href="https://flagodna.com" target="_blank" rel="noopener"
+              >Flagodna</a
+            >
+            <a href="#">Versi Baru</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <p>© 2026 KasirCepat · Flagodna · Private / Proprietary</p>
+        <p>Dibuat dengan jujur di Indonesia 🇮🇩</p>
+      </div>
+    </footer>
+
+    <script>
+      // ─────────────────────────────────────────────
+      // CONFIG
+      // ─────────────────────────────────────────────
+      const VERSIONS = {
+        // latest stable per platform  (semver strings)
+        android: "26.5.3",
+        windows: "26.5.3",
+        linux: "26.5.3",
+        ios: null, // not released yet
+        ios: null, // not released yet
+        web: null,
+        default: "26.5.3", // fallback when platform unknown
+      };
+
+      // download links per platform
+      const DOWNLOAD_LINKS = {
+        android: "https://flagodna-developer.github.io/kasir-cepat/#download",
+        windows: "https://flagodna-developer.github.io/kasir-cepat/#download",
+        linux: "https://flagodna-developer.github.io/kasir-cepat/#download",
+        macos: "https://flagodna-developer.github.io/kasir-cepat/#download",
+        default: "https://flagodna-developer.github.io/kasir-cepat/#download",
+      };
+
+      // versions considered "critical" (security / data-loss fixes) — force update notice
+      const CRITICAL_BELOW = {
+        android: "1.0.0",
+        windows: "1.0.0",
+        linux: "1.0.0",
+        macos: "1.0.0",
+      };
+
+      // platform display names
+      const PLATFORM_NAMES = {
+        android: "Android",
+        windows: "Windows",
+        linux: "Linux",
+        macos: "macOS",
+        ios: "iOS",
+        web: "Web",
+      };
+
+      // ─────────────────────────────────────────────
+      // SEMVER helpers
+      // ─────────────────────────────────────────────
+      function parseSemver(v) {
+        if (!v) return null;
+        const m = String(v)
+          .trim()
+          .replace(/^v/i, "")
+          .match(/^(\d+)\.(\d+)\.(\d+)/);
+        return m ? m.slice(1).map(Number) : null;
+      }
+
+      function compareSemver(a, b) {
+        // returns -1, 0, 1
+        for (let i = 0; i < 3; i++) {
+          if (a[i] < b[i]) return -1;
+          if (a[i] > b[i]) return 1;
+        }
+        return 0;
+      }
+
+      // ─────────────────────────────────────────────
+      // STATUS DEFINITIONS
+      // ─────────────────────────────────────────────
+      const STATUS = {
+        latest: {
+          color: "#16a34a",
+          icon: "✅",
+          badge: "Sudah Terbaru",
+          title: "Aplikasimu sudah versi terbaru!",
+          desc: "Tidak ada pembaruan yang perlu dilakukan. Kamu sudah menggunakan versi paling mutakhir dari KasirCepat.",
+        },
+        update: {
+          color: "#d97706",
+          icon: "🔄",
+          badge: "Ada Pembaruan",
+          title: "Versi baru tersedia",
+          desc: "Ada pembaruan yang direkomendasikan. Yuk perbarui untuk mendapatkan fitur dan perbaikan terbaru.",
+        },
+        critical: {
+          color: "#dc2626",
+          icon: "⚠️",
+          badge: "Update Penting",
+          title: "Pembaruan kritis diperlukan",
+          desc: "Versi yang kamu pakai memiliki masalah penting (keamanan atau data). Segera perbarui aplikasi.",
+        },
+        unreleased: {
+          color: "#7c3aed",
+          icon: "🚀",
+          badge: "Belum Dirilis",
+          title: "Platform ini belum tersedia",
+          desc: "KasirCepat belum tersedia untuk platform ini. Pantau update kami untuk mengetahui kapan dirilis.",
+        },
+        unknown: {
+          color: "#6b7280",
+          icon: "❓",
+          badge: "Versi Tidak Dikenal",
+          title: "Versi tidak dapat dikenali",
+          desc: "Versi yang terdeteksi tidak dapat kami kenali. Pastikan kamu mengunduh aplikasi dari sumber resmi.",
+        },
+        browse: {
+          color: "#6b7280",
+          icon: "ℹ️",
+          badge: "Info Versi",
+          title: "Informasi versi KasirCepat",
+          desc: "Kamu membuka halaman ini dari browser. Unduh aplikasi KasirCepat untuk mendapatkan pengalaman terbaik.",
+        },
+      };
+
+      // ─────────────────────────────────────────────
+      // RENDER
+      // ─────────────────────────────────────────────
+      function versionChip(label, version) {
+        return `
+          <div class="vc-ver-chip">
+            <strong>${version ?? "—"}</strong>
+            <span>${label}</span>
+          </div>`;
+      }
+
+      function downloadBtn(platform) {
+        const url = DOWNLOAD_LINKS[platform] ?? DOWNLOAD_LINKS.default;
+        return `<a href="${url}" class="btn btn-primary">Unduh Sekarang</a>`;
+      }
+
+      function renderStatus(
+        statusKey,
+        { currentVersion, latestVersion, platform }
+      ) {
+        const s = STATUS[statusKey];
+
+        // apply color
+        document
+          .querySelector(".vc-card")
+          .style.setProperty("--status-color", s.color);
+
+        document.getElementById("vc-icon").textContent = s.icon;
+        document.getElementById("vc-badge").textContent = s.badge;
+        document.getElementById("vc-title").textContent = s.title;
+        document.getElementById("vc-desc").textContent = s.desc;
+
+        // version chips
+        const chips = [];
+        if (currentVersion) chips.push(versionChip("Versimu", currentVersion));
+        if (latestVersion) chips.push(versionChip("Terbaru", latestVersion));
+        document.getElementById("vc-versions").innerHTML = chips.join("");
+
+        // action buttons
+        const btns = [];
+        if (statusKey === "update" || statusKey === "critical") {
+          btns.push(downloadBtn(platform));
+        }
+        if (statusKey === "unreleased" || statusKey === "browse") {
+          btns.push(
+            `<a href="${DOWNLOAD_LINKS.default}" class="btn btn-outline">Lihat Unduhan</a>`
+          );
+        }
+        if (statusKey === "latest") {
+          btns.push(
+            `<a href="../index.html" class="btn btn-outline">Kembali ke Beranda</a>`
+          );
+        }
+        document.getElementById("vc-actions").innerHTML = btns.join("");
+
+        // platform note
+        const pName = PLATFORM_NAMES[platform];
+        document.getElementById("vc-platform-note").textContent = pName
+          ? `Platform terdeteksi: ${pName}`
+          : "";
+
+        // subtitle
+        document.getElementById("vc-subtitle").textContent =
+          statusKey === "browse"
+            ? "Informasi versi & unduhan tersedia di bawah."
+            : `Status aplikasimu di ${pName ?? "perangkatmu"}.`;
+
+        // show card, hide loader
+        document.getElementById("vc-loading").style.display = "none";
+        document.getElementById("vc-card").style.display = "";
+      }
+
+      // ─────────────────────────────────────────────
+      // MAIN LOGIC
+      // ─────────────────────────────────────────────
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const rawVer = params.get("version");
+        const rawPlat = (params.get("platform") ?? "").toLowerCase().trim();
+
+        // normalise platform key
+        const platform = Object.keys(VERSIONS).includes(rawPlat)
+          ? rawPlat
+          : "default";
+
+        const latestVersion = VERSIONS[platform];
+
+        // no params → opened from browser directly
+        if (!rawVer && !rawPlat) {
+          renderStatus("browse", {
+            currentVersion: null,
+            latestVersion: VERSIONS.default,
+            platform: "default",
+          });
+          return;
+        }
+
+        // platform not yet released
+        if (latestVersion === null) {
+          renderStatus("unreleased", {
+            currentVersion: rawVer,
+            latestVersion: null,
+            platform,
+          });
+          return;
+        }
+
+        const current = parseSemver(rawVer);
+        const latest = parseSemver(latestVersion);
+
+        // version string unrecognisable
+        if (!current) {
+          renderStatus("unknown", {
+            currentVersion: rawVer,
+            latestVersion,
+            platform,
+          });
+          return;
+        }
+
+        const cmp = compareSemver(current, latest);
+
+        if (cmp >= 0) {
+          // user is on latest (or somehow ahead — edge case)
+          renderStatus("latest", {
+            currentVersion: rawVer,
+            latestVersion,
+            platform,
+          });
+        } else {
+          // check if critical
+          const critFloor = parseSemver(CRITICAL_BELOW[platform]);
+          const isCritical = critFloor && compareSemver(current, critFloor) < 0;
+
+          renderStatus(isCritical ? "critical" : "update", {
+            currentVersion: rawVer,
+            latestVersion,
+            platform,
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

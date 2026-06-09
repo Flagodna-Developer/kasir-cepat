@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beli Pro — KasirCepat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png"
+    />
+    <link rel="stylesheet" href="../assets/css/buy.css" />
+  </head>
+  <body>
+    <!-- ░░ NAV ░░ -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <img
+            src="https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png"
+            alt="KasirCepat"
+            class="logo-image"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"
+          />
+          <span class="logo-mark" style="display: none">KC</span>
+          <span class="logo-text">KasirCepat</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Beranda</a>
+          <a href="../panduan/index.html">Panduan</a>
+          <a href="../harga/index.html">Harga</a>
+          <a href="../index.html#download">Unduh</a>
+          <a href="#" class="nav-cta" style="padding: 8px 18px; font-size: 14px"
+            >Beli Pro</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="page">
+      <!-- ░░ HERO ░░ -->
+      <div class="checkout-hero">
+        <div class="container">
+          <span class="checkout-hero-badge">🛒 Pembelian Lisensi Pro</span>
+          <h1>Satu langkah lagi<br />untuk <em>KasirCepat Pro.</em></h1>
+          <p>
+            Isi data, transfer, konfirmasi — token aktif dalam hitungan menit.
+          </p>
+        </div>
+      </div>
+
+      <!-- ░░ CHECKOUT LAYOUT ░░ -->
+      <div class="checkout-layout">
+        <!-- ── LEFT: Main form ── -->
+        <div>
+          <!-- Steps -->
+          <div class="steps">
+            <div class="step active">
+              <span class="step-num">1</span>Data & Transfer
+            </div>
+            <div class="step-line"></div>
+            <div class="step"><span class="step-num">2</span>Konfirmasi WA</div>
+            <div class="step-line"></div>
+            <div class="step"><span class="step-num">3</span>Terima Token</div>
+          </div>
+
+          <!-- ── STEP 1: Data pembeli ── -->
+          <div class="card" style="margin-bottom: 20px">
+            <span class="card-label">Langkah 1</span>
+            <div class="card-title">Isi data Anda</div>
+
+            <div class="form-row">
+              <div class="form-group" style="margin-bottom: 0">
+                <label>Nama <span>*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputNama"
+                  placeholder="Nama lengkap Anda"
+                />
+              </div>
+              <div class="form-group" style="margin-bottom: 0">
+                <label>Nomor WhatsApp <span>*</span></label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="inputWA"
+                  placeholder="08xxxxxxxxxx"
+                />
+                <span class="form-hint">Token akan dikirim ke nomor ini</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Nama Toko <span>*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputToko"
+                placeholder="Nama toko / usaha Anda"
+              />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0">
+              <label
+                >Catatan
+                <span style="color: var(--gray-500); font-weight: 400"
+                  >(opsional)</span
+                ></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputCatatan"
+                placeholder="Misal: untuk 2 perangkat, kirim ke email juga, dll."
+              />
+            </div>
+          </div>
+
+          <!-- ── STEP 2: Transfer bank ── -->
+          <div class="card" style="margin-bottom: 20px">
+            <span class="card-label">Langkah 2</span>
+            <div class="card-title">Transfer ke rekening BCA</div>
+
+            <ul class="instr-list">
+              <li>
+                <span class="instr-num">1</span>Transfer tepat sesuai nominal di
+                bawah (termasuk kode unik 3 digit terakhir).
+              </li>
+              <li>
+                <span class="instr-num">2</span>Simpan bukti transfer Anda —
+                akan diminta saat konfirmasi.
+              </li>
+              <li>
+                <span class="instr-num">3</span>Klik tombol konfirmasi WhatsApp
+                setelah selesai transfer.
+              </li>
+            </ul>
+
+            <!-- Bank card -->
+            <div class="bank-card">
+              <div class="bank-header">
+                <div class="bank-logo">BCA</div>
+                <div>
+                  <div class="bank-name">Bank Central Asia (BCA)</div>
+                  <div class="bank-holder">
+                    a.n. <strong id="holderName">NAMA_PEMILIK</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="bank-number-wrap">
+                <span class="bank-number" id="bankNumber">XXXX-XXXX-XX</span>
+                <button class="copy-btn" id="copyBtn" onclick="copyNumber()">
+                  Salin
+                </button>
+              </div>
+              <div class="bank-amount-row">
+                <div>
+                  <div class="bank-amount-label">Nominal transfer</div>
+                  <div class="bank-amount-note" id="uniqueNote">
+                    +kode unik sudah termasuk
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <div class="bank-amount-value" id="transferAmount">
+                    Rp 129.XXX
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="unique-notice">
+              <strong>⚠️ Kode unik:</strong> Nominal transfer di atas sudah
+              termasuk 3 digit kode unik (contoh: Rp 129.<strong>347</strong>).
+              Kode ini membantu kami mencocokkan pembayaran Anda secara
+              otomatis. Transfer dengan nominal <em>tepat sama</em>.
+            </div>
+          </div>
+
+          <!-- ── STEP 3: Konfirmasi WA ── -->
+          <div class="card">
+            <span class="card-label">Langkah 3</span>
+            <div class="card-title">Konfirmasi via WhatsApp</div>
+            <p
+              style="
+                font-size: 14.5px;
+                color: var(--gray-700);
+                line-height: 1.7;
+                margin-bottom: 4px;
+              "
+            >
+              Setelah transfer, klik tombol di bawah. Pesan konfirmasi akan
+              terisi otomatis — sertakan bukti transfer di chat yang sama.
+            </p>
+
+            <a href="#" class="wa-btn" id="waBtn" onclick="openWA(event)">
+              <!-- WhatsApp SVG icon -->
+              <svg
+                class="wa-icon"
+                viewBox="0 0 24 24"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Konfirmasi via WhatsApp
+            </a>
+            <p
+              style="
+                font-size: 12px;
+                color: var(--gray-500);
+                margin-top: 10px;
+                text-align: center;
+              "
+            >
+              Token Pro dikirim dalam <strong>1×24 jam</strong> hari kerja
+              setelah pembayaran terverifikasi.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── RIGHT: Order summary ── -->
+        <div>
+          <div class="summary-card">
+            <div class="summary-title">Ringkasan Pesanan</div>
+
+            <div class="summary-item">
+              <span class="summary-item-label">Paket</span>
+              <span class="summary-item-val">KasirCepat Pro</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Durasi</span>
+              <span class="summary-item-val">1 Tahun</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Harga normal</span>
+              <span class="summary-strike">Rp 229.000</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Diskon</span>
+              <span class="summary-item-val" style="color: var(--green)"
+                >– Rp 100.000</span
+              >
+            </div>
+
+            <div class="summary-total">
+              <span class="summary-total-label">Total</span>
+              <div style="text-align: right">
+                <div class="summary-total-val">Rp 129.000</div>
+              </div>
+            </div>
+            <span class="summary-save">Hemat Rp 100.000 🎉</span>
+
+            <ul class="summary-features">
+              <li><span class="sf-check">✓</span>Kasir Bersama multi-device</li>
+              <li><span class="sf-check">✓</span>Auto Print struk otomatis</li>
+              <li><span class="sf-check">✓</span>Scanner barcode hardware</li>
+              <li><span class="sf-check">✓</span>Export PDF &amp; CSV</li>
+              <li><span class="sf-check">✓</span>Stok tidak terbatas</li>
+              <li><span class="sf-check">✓</span>Dukungan prioritas WA</li>
+            </ul>
+
+            <div class="summary-guarantee">
+              <div class="g-row">🔒 Data 100% tetap di perangkat Anda</div>
+              <div class="g-row">⚡ Token aktif dalam 1×24 jam kerja</div>
+              <div class="g-row">🇮🇩 Support berbahasa Indonesia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /checkout-layout -->
+    </div>
+    <!-- /page -->
+
+    <!-- ░░ FOOTER ░░ -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <a href="../index.html" class="nav-logo">
+            <img
+              src="https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png"
+              alt="KasirCepat"
+              class="logo-image"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"
+            />
+            <span class="logo-mark" style="display: none">KC</span>
+            <span class="logo-text">KasirCepat</span>
+          </a>
+          <p class="footer-tagline">Tokomu, Datamu, Kendalimu.</p>
+          <p class="footer-flagodna">
+            Bagian dari ekosistem
+            <a href="https://flagodna.com" target="_blank" rel="noopener"
+              >Flagodna</a
+            >
+            — studio teknologi privacy-first untuk kehidupan sehari-hari.
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Produk</h5>
+            <a href="../index.html#fitur">Fitur</a>
+            <a href="../harga/index.html">Paket</a>
+            <a href="../index.html#download">Unduh</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="../documents/kebijakan-privasi/index.html"
+              >Kebijakan Privasi</a
+            >
+            <a href="../documents/syarat-penggunaan/index.html"
+              >Syarat Penggunaan</a
+            >
+            <a href="../documents/kontak/index.html">Kontak</a>
+          </div>
+          <div class="footer-col">
+            <h5>Komunitas</h5>
+            <a
+              href="https://github.com/Flagodna-Developer/kasir-cepat"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a href="https://flagodna.com" target="_blank" rel="noopener"
+              >Flagodna</a
+            >
+            <a href="../versi-baru/index.html">Versi Baru</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <p>© 2026 KasirCepat · Flagodna · Private / Proprietary</p>
+        <p>Dibuat dengan jujur di Indonesia 🇮🇩</p>
+      </div>
+    </footer>
+
+    <script>
+      const CONFIG = {
+        bankNumber: "1225 3562 77",
+        accountHolder: "Cahyanudien Aziz",
+        baseAmount: 129000, // harga dasar
+        waNumber: "6285781426568",
+      };
+
+      /* ── Generate kode unik per sesi ── */
+      const uniqueCode = Math.floor(Math.random() * 900) + 100; // 100–999
+      const totalAmount = CONFIG.baseAmount + uniqueCode;
+
+      /* ── Render ke halaman ── */
+      document.getElementById("bankNumber").textContent = CONFIG.bankNumber;
+      document.getElementById("holderName").textContent = CONFIG.accountHolder;
+      document.getElementById("transferAmount").textContent =
+        "Rp " + totalAmount.toLocaleString("id-ID");
+      document.getElementById(
+        "uniqueNote"
+      ).textContent = `(sudah termasuk kode unik ${uniqueCode})`;
+
+      /* ── Copy nomor rekening ── */
+      function copyNumber() {
+        const raw = CONFIG.bankNumber.replace(/[^0-9]/g, "");
+        navigator.clipboard.writeText(raw).then(() => {
+          const btn = document.getElementById("copyBtn");
+          btn.textContent = "✓ Disalin!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "Salin";
+            btn.classList.remove("copied");
+          }, 2000);
+        });
+      }
+
+      /* ── WA konfirmasi ── */
+      function openWA(e) {
+        e.preventDefault();
+        const nama = document.getElementById("inputNama").value.trim();
+        const wa = document.getElementById("inputWA").value.trim();
+        const toko = document.getElementById("inputToko").value.trim();
+        const note = document.getElementById("inputCatatan").value.trim();
+
+        if (!nama || !wa || !toko) {
+          alert(
+            "Mohon isi nama, nomor WhatsApp, dan nama toko terlebih dahulu."
+          );
+          return;
+        }
+
+        const msg = [
+          `Halo, saya ingin konfirmasi pembelian *KasirCepat Pro* 🧾`,
+          ``,
+          `*Nama:* ${nama}`,
+          `*WhatsApp:* ${wa}`,
+          `*Nama Toko:* ${toko}`,
+          note ? `*Catatan:* ${note}` : null,
+          ``,
+          `*Bank:* BCA`,
+          `*Nominal Transfer:* Rp ${totalAmount.toLocaleString("id-ID")}`,
+          `*Kode Unik:* ${uniqueCode}`,
+          ``,
+          `_(Bukti transfer terlampir)_`,
+        ]
+          .filter((l) => l !== null)
+          .join("\n");
+
+        const url = `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(
+          msg
+        )}`;
+        window.open(url, "_blank");
+      }
+
+      /* ── Active step highlight on scroll ── */
+      const cards = document.querySelectorAll(".card");
+      // simple: mark step 2 active when bank card visible
+    </script>
+  </body>
+</html>

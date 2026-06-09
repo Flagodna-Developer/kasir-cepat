@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-  <head>
+ <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KasirCepat — Tokomu, Datamu, Kendalimu</title>
@@ -22,7 +20,7 @@
       property="og:image"
       content="https://flagodna-developer.github.io/kasir-cepat/assets/images/banner.jpg"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -92,407 +90,463 @@
       }
     </script>
   </head>
-  <body>
-    <!-- NAV -->
-    <nav class="nav">
-      <div class="nav-inner container">
-        <a href="/" class="nav-logo">
-          <img
-            src="assets/icon/kasir-cepat.png"
-            alt="KasirCepat Logo"
-            class="logo-image"
-          />
-          <span class="logo-text">KasirCepat</span>
-        </a>
-        <div class="nav-links">
-          <a href="#fitur">Fitur</a>
-          <a href="#paket">Paket</a>
-          <a
-            href="https://github.com/Flagodna-Developer/kasir-cepat"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >
-          <a href="#download" class="nav-cta">Unduh</a>
-        </div>
+<body>
+
+<!-- ░░ NAV ░░ -->
+<nav class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-logo">
+      <img src="./assets/icon/kasir-cepat.png" alt="KasirCepat Logo" class="logo-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <span style="display:none;width:36px;height:36px;border-radius:9px;background:var(--orange);color:#fff;font-family:var(--font-display);font-weight:700;font-size:14px;align-items:center;justify-content:center">KC</span>
+      <span class="logo-text">KasirCepat</span>
+    </a>
+    <div class="nav-links">
+      <a href="#" style="color:var(--orange);font-weight:600">Beranda</a>
+      <a href="./panduan/index.html">Panduan</a>
+      <a href="./harga/index.html">Harga</a>
+      <a href="#download">Unduh</a>
+      <a href="./beli/index.html" class="nav-cta btn" style="padding:8px 18px;font-size:14px">Beli Pro</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ░░ HERO ░░ -->
+<header class="hero">
+  <div class="hero-banner">
+    <img src="assets/images/banner.jpg" alt="KasirCepat Banner" class="banner-img" />
+    <div class="banner-overlay"></div>
+  </div>
+  <div class="hero-content container">
+    <div class="hero-badge">Offline-First · Privacy-First · Tanpa Langganan</div>
+    <h1 class="hero-title">
+      Kasir yang<br />
+      <em>jujur</em> untuk<br />
+      tokomu.
+    </h1>
+    <p class="hero-tagline">Tokomu, Datamu, Kendalimu.</p>
+    <p class="hero-sub">
+      Aplikasi POS offline-first untuk warung, toko kelontong, kios pasar, dan usaha kecil Indonesia.
+      Transaksi tetap jalan meski internet mati. Data 100% di perangkatmu.
+    </p>
+    <div class="hero-actions">
+      <a href="#download" class="btn btn-primary">Unduh Gratis</a>
+      <a href="#fitur" class="btn btn-ghost">Lihat Fitur ↓</a>
+    </div>
+    <p class="hero-note">Android · Windows · Linux &nbsp;·&nbsp; Gratis selamanya untuk 1 perangkat</p>
+  </div>
+</header>
+
+<!-- ░░ STAT STRIP ░░ -->
+<div class="stat-strip">
+  <div class="container stat-inner">
+    <div class="stat-item">
+      <span class="stat-icon">📱</span>
+      <div><div class="stat-val">3 Platform</div><div class="stat-desc">Android · Windows · Linux</div></div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">📶</span>
+      <div><div class="stat-val">100% Offline</div><div class="stat-desc">Tidak butuh internet</div></div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">🔒</span>
+      <div><div class="stat-val">Data Lokal</div><div class="stat-desc">Tidak pernah ke server kami</div></div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">💳</span>
+      <div><div class="stat-val">Rp 0</div><div class="stat-desc">Gratis selamanya (1 device)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ PROBLEMS ░░ -->
+<section class="section problems">
+  <div class="container">
+    <div class="section-label">Masalah yang Kami Lihat</div>
+    <h2 class="section-title">Aplikasi kasir lain<br />punya masalah yang sama.</h2>
+    <div class="problems-grid">
+      <div class="problem-item">
+        <span class="problem-icon">🔒</span>
+        <p>Produk ke-31 dikunci sampai kamu bayar langganan bulanan</p>
       </div>
-    </nav>
-
-    <!-- HERO -->
-    <header class="hero">
-      <div class="hero-banner">
-        <img
-          src="assets/images/banner.jpg"
-          alt="KasirCepat Banner"
-          class="banner-img"
-        />
-        <div class="banner-overlay"></div>
+      <div class="problem-item">
+        <span class="problem-icon">🗑️</span>
+        <p>Riwayat transaksi lama dihapus otomatis tanpa izin</p>
       </div>
-      <div class="hero-content container">
-        <div class="hero-badge">Offline-First · Privacy-First</div>
-        <h1 class="hero-title">
-          Kasir yang<br />
-          <em>jujur</em> untuk<br />
-          tokomu.
-        </h1>
-        <p class="hero-tagline">Tokomu, Datamu, Kendalimu.</p>
-        <p class="hero-sub">
-          Aplikasi POS offline-first untuk warung, toko kelontong, kios pasar,
-          dan usaha kecil Indonesia.<br />
-          Bukan untuk investor kami. Untuk kasirmu.
-        </p>
-        <div class="hero-actions">
-          <a href="#" class="btn btn-primary">Unduh Gratis</a>
-          <a href="#fitur" class="btn btn-ghost">Lihat Fitur ↓</a>
-        </div>
-        <p class="hero-note">
-          Android · Windows · Linux &nbsp;·&nbsp; Gratis selamanya untuk 1
-          perangkat
-        </p>
+      <div class="problem-item">
+        <span class="problem-icon">📶</span>
+        <p>"Offline mode" hanya fallback darurat — sync dan login tetap butuh internet</p>
       </div>
-    </header>
-
-    <!-- PROBLEMS -->
-    <section class="section problems">
-      <div class="container">
-        <div class="section-label">Masalah yang Kami Lihat</div>
-        <h2 class="section-title">
-          Aplikasi kasir lain<br />punya masalah yang sama.
-        </h2>
-        <div class="problems-grid">
-          <div class="problem-item">
-            <span class="problem-icon">🔒</span>
-            <p>Produk ke-31 dikunci sampai kamu bayar langganan</p>
-          </div>
-          <div class="problem-item">
-            <span class="problem-icon">🗑️</span>
-            <p>Data transaksi lama dihapus otomatis tanpa izin</p>
-          </div>
-          <div class="problem-item">
-            <span class="problem-icon">📶</span>
-            <p>
-              "Offline mode" hanya fallback darurat — sync dan login tetap butuh
-              internet
-            </p>
-          </div>
-          <div class="problem-item">
-            <span class="problem-icon">📊</span>
-            <p>
-              Privacy policy memperbolehkan data tokomu dianalisa dan
-              dilisensikan ke pihak ketiga
-            </p>
-          </div>
-          <div class="problem-item">
-            <span class="problem-icon">😵</span>
-            <p>
-              UI dibuat untuk impress investor, bukan untuk si kasir yang pegang
-              HP saat toko ramai
-            </p>
-          </div>
-          <div class="problem-item problem-answer">
-            <span class="problem-icon">✅</span>
-            <p><strong>KasirCepat tidak melakukan semua itu.</strong></p>
-          </div>
-        </div>
+      <div class="problem-item">
+        <span class="problem-icon">📊</span>
+        <p>Privacy policy memperbolehkan data tokomu dianalisa dan dilisensikan ke pihak ketiga</p>
       </div>
-    </section>
-
-    <!-- VALUES -->
-    <section class="section values">
-      <div class="container">
-        <div class="section-label">Nilai Utama</div>
-        <h2 class="section-title">Dirancang berbeda<br />dari awal.</h2>
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-num">01</div>
-            <h3>Offline First, bukan Offline Fallback</h3>
-            <p>
-              Transaksi tetap berjalan meski internet mati. Bukan "mode darurat"
-              — memang dirancang begitu dari awal.
-            </p>
-          </div>
-          <div class="value-card">
-            <div class="value-num">02</div>
-            <h3>Data 100% Milik Kamu</h3>
-            <p>
-              Tidak ada server kami yang menyentuh data transaksi tokomu. Data
-              tersimpan di perangkatmu — titik.
-            </p>
-          </div>
-          <div class="value-card">
-            <div class="value-num">03</div>
-            <h3>Sinkronisasi Lokal tanpa Cloud</h3>
-            <p>
-              HP kasir dan laptop owner bisa sinkron lewat Wi-Fi toko atau
-              hotspot HP — tanpa internet, tanpa akun.
-            </p>
-          </div>
-          <div class="value-card">
-            <div class="value-num">04</div>
-            <h3>Dibuat untuk Si Kasir</h3>
-            <p>
-              Satu layar. Satu alur. Langsung bisa dipakai tanpa training.
-              Karena yang pegang HP saat ramai adalah karyawanmu.
-            </p>
-          </div>
-        </div>
+      <div class="problem-item">
+        <span class="problem-icon">😵</span>
+        <p>UI dibuat untuk impress investor, bukan untuk kasir yang pegang HP saat toko ramai</p>
       </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section features" id="fitur">
-      <div class="container">
-        <div class="section-label">Fitur</div>
-        <h2 class="section-title">
-          Semua yang kamu<br />butuhkan. Tidak lebih.
-        </h2>
-        <div class="features-cols">
-          <div class="feature-col">
-            <h4 class="feature-col-title">Core POS</h4>
-            <ul class="feature-list">
-              <li>Tambah / edit / hapus produk</li>
-              <li>Kategori produk</li>
-              <li>Checkout cepat</li>
-              <li>Search produk</li>
-              <li>Riwayat transaksi lengkap</li>
-              <li>Ringkasan penjualan harian</li>
-              <li>Stok otomatis berkurang</li>
-              <li>Pelacakan utang/piutang</li>
-              <li>Print struk (Bluetooth printer)</li>
-              <li>Kirim struk via WhatsApp</li>
-            </ul>
-          </div>
-          <div class="feature-col">
-            <h4 class="feature-col-title">Sync Lokal</h4>
-            <ul class="feature-list">
-              <li>Sync Android ↔ Android</li>
-              <li>Sync Android ↔ Desktop</li>
-              <li>Auto detect device di jaringan sama</li>
-              <li>Push transaksi realtime</li>
-              <li>Manual sync button</li>
-              <li>Conflict handling sederhana</li>
-            </ul>
-            <h4 class="feature-col-title" style="margin-top: 2rem">
-              Export & Backup
-            </h4>
-            <ul class="feature-list">
-              <li>Export CSV (buka di Excel)</li>
-              <li>Export PDF laporan</li>
-              <li>Backup file lokal</li>
-              <li>Restore data kapanpun</li>
-            </ul>
-          </div>
-          <div class="feature-col feature-unique">
-            <h4 class="feature-col-title">Khusus Warung 🏪</h4>
-            <ul class="feature-list">
-              <li>Lacak utang pelanggan</li>
-              <li>Deposit galon air</li>
-              <li>Setoran harian kasir</li>
-              <li>Notifikasi stok menipis</li>
-              <li>Scan barcode produk</li>
-              <li>Foto produk dari kamera</li>
-              <li>Import produk via CSV</li>
-              <li>Laporan laba/rugi</li>
-              <li>Laporan stok opname</li>
-            </ul>
-          </div>
-        </div>
+      <div class="problem-item problem-answer">
+        <span class="problem-icon">✅</span>
+        <p><strong>KasirCepat tidak melakukan semua itu.</strong></p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- PRICING -->
-    <section class="section pricing" id="paket">
-      <div class="container">
-        <div class="section-label">Paket</div>
-        <h2 class="section-title">Transparan.<br />Tidak ada jebakan.</h2>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-badge">Gratis Selamanya</div>
-            <h3 class="pricing-name">Free</h3>
-            <div class="pricing-price">Rp 0</div>
-            <ul class="pricing-features">
-              <li>1 perangkat</li>
-              <li>POS offline penuh</li>
-              <li>Produk & transaksi unlimited</li>
-              <li>Riwayat transaksi lengkap — tidak pernah dihapus</li>
-              <li>Laporan harian</li>
-            </ul>
-            <a href="#" class="btn btn-outline">Unduh Gratis</a>
-          </div>
-          <div class="pricing-card pricing-featured">
-            <div class="pricing-badge">Sekali Bayar</div>
-            <h3 class="pricing-name">Pro</h3>
-            <div class="pricing-price">Segera</div>
-            <ul class="pricing-features">
-              <li>Semua fitur Free</li>
-              <li>Sinkronisasi Wi-Fi multi-device</li>
-              <li>Export PDF & CSV</li>
-              <li>Backup & restore premium</li>
-              <li>Tanpa iklan</li>
-              <li>Laporan lebih lengkap</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Daftar Notifikasi</a>
-          </div>
-          <div class="pricing-card">
-            <div class="pricing-badge">Masa Depan · Opsional</div>
-            <h3 class="pricing-name">Cloud+</h3>
-            <div class="pricing-price">TBD</div>
-            <ul class="pricing-features">
-              <li>Backup online terenkripsi</li>
-              <li>Multi cabang</li>
-              <li>Remote monitoring owner</li>
-              <li class="pricing-note">
-                Cloud+ tidak akan pernah menjadi syarat untuk fitur dasar
-              </li>
-            </ul>
-            <a href="#" class="btn btn-outline">Pantau Update</a>
-          </div>
-        </div>
+<!-- ░░ VALUES ░░ -->
+<section class="section values">
+  <div class="container">
+    <div class="section-label">Nilai Utama</div>
+    <h2 class="section-title">Dirancang berbeda<br />dari awal.</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3>Offline First, bukan Offline Fallback</h3>
+        <p>Transaksi tetap berjalan meski internet mati. Bukan "mode darurat" — memang dirancang begitu dari awal.</p>
       </div>
-    </section>
-
-    <!-- DOWNLOAD SECTION -->
-    <section class="section features" id="download">
-      <div class="container">
-        <div class="section-label">Unduh</div>
-        <h2 class="section-title">
-          Download KasirCepat<br />
-          untuk perangkatmu.
-        </h2>
-
-        <div class="download-grid">
-          <!-- Android Card -->
-          <div class="download-card">
-            <div class="download-icon">📱</div>
-            <div class="download-badge">Tersedia</div>
-            <h3 class="download-name">Android</h3>
-            <ul class="download-specs">
-              <li>Google Play Store</li>
-              <li>Android 8.0+</li>
-              <li>Gratis selamanya</li>
-            </ul>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.flagodna.kasircepat"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-              >Unduh</a
-            >
-          </div>
-
-          <!-- Windows Card -->
-          <div class="download-card">
-            <div class="download-icon">🪟</div>
-            <div class="download-badge">Segera Hadir</div>
-            <h3 class="download-name">Windows</h3>
-            <ul class="download-specs">
-              <li>Windows 10/11</li>
-              <li>64-bit</li>
-              <li>Offline-first</li>
-            </ul>
-            <div class="download-status">⚡ Dalam proses pengembangan</div>
-          </div>
-
-          <!-- Linux Card -->
-          <div class="download-card">
-            <div class="download-icon">🐧</div>
-            <div class="download-badge">Segera Hadir</div>
-            <h3 class="download-name">Linux</h3>
-            <ul class="download-specs">
-              <li>Ubuntu/Debian/Fedora</li>
-              <li>AppImage / DEB</li>
-              <li>Sync dengan Android</li>
-            </ul>
-            <div class="download-status">🐣 Menyusul setelah Windows</div>
-          </div>
-        </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>Data 100% Milik Kamu</h3>
+        <p>Tidak ada server kami yang menyentuh data transaksi tokomu. Data tersimpan di perangkatmu — titik.</p>
       </div>
-    </section>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>Sinkronisasi Lokal tanpa Cloud</h3>
+        <p>HP kasir dan laptop owner bisa sinkron lewat WiFi toko — tanpa internet, tanpa akun cloud.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3>Dibuat untuk Si Kasir</h3>
+        <p>Satu layar. Satu alur. Langsung bisa dipakai tanpa training. Karena yang pegang HP saat ramai adalah karyawanmu.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- PROMISE -->
-    <section class="section promise">
-      <div class="container promise-inner">
-        <div class="promise-quote">
-          <span class="quote-mark">"</span>
-          <blockquote>
-            Kompetitor membangun kasir untuk investor mereka.<br />
-            Kami membangun kasir untuk tokomu.
-          </blockquote>
-        </div>
-        <div class="promise-text">
-          <h3>Filosofi Produk</h3>
-          <ul class="philosophy-list">
-            <li>Simpel lebih penting dari banyak fitur</li>
-            <li>Stabil lebih penting dari hype</li>
-            <li>Cepat lebih penting dari cantik</li>
-            <li>Data pengguna bukan produk kami</li>
-          </ul>
-          <p class="philosophy-close">
-            Pengguna kecil juga pantas software yang jujur.
-          </p>
-        </div>
+<!-- ░░ HOW IT WORKS ░░ -->
+<section class="section how">
+  <div class="container">
+    <div class="section-label">Cara Kerja</div>
+    <h2 class="section-title">Transaksi selesai<br />dalam 4 langkah.</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <h4>Cari Produk</h4>
+        <p>Ketuk 🔍 atau scan barcode produk langsung dari kamera HP</p>
       </div>
-    </section>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <h4>Tambah ke Keranjang</h4>
+        <p>Ketuk produk, stok berkurang otomatis saat transaksi selesai</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <h4>Pilih Pembayaran</h4>
+        <p>Tunai (kembalian otomatis), Transfer, atau catat sebagai Utang</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">4</div>
+        <h4>Selesai &amp; Struk</h4>
+        <p>Print struk thermal atau bagikan via WhatsApp — selesai!</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <a href="/" class="nav-logo">
-            <img
-              src="assets/icon/kasir-cepat.png"
-              alt="KasirCepat Logo"
-              class="logo-image"
-            />
-            <span class="logo-text">KasirCepat</span>
-          </a>
-          <p class="footer-tagline">Tokomu, Datamu, Kendalimu.</p>
-          <p class="footer-flagodna">
-            Bagian dari ekosistem
-            <a href="https://flagodna.com" target="_blank" rel="noopener"
-              >Flagodna</a
-            >
-            — studio teknologi privacy-first untuk kehidupan sehari-hari.
-          </p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h5>Produk</h5>
-            <a href="#fitur">Fitur</a>
-            <a href="#paket">Paket</a>
-            <a href="#">Roadmap</a>
-            <a href="#">Unduh</a>
-          </div>
-          <div class="footer-col">
-            <h5>Legal</h5>
-            <a
-              href="https://github.com/Flagodna-Developer/kasir-cepat/documents/privacy-policy"
-              >Kebijakan Privasi</a
-            >
-            <a
-              href="https://github.com/Flagodna-Developer/kasir-cepat/documents/terms-of-use"
-              >Syarat Penggunaan</a
-            >
-          </div>
-          <div class="footer-col">
-            <h5>Komunitas</h5>
-            <a
-              href="https://github.com/Flagodna-Developer/kasir-cepat"
-              target="_blank"
-              rel="noopener"
-              >GitHub</a
-            >
-            <a href="https://flagodna.com" target="_blank" rel="noopener"
-              >Flagodna</a
-            >
-          </div>
-        </div>
+<!-- ░░ MENU HIGHLIGHTS ░░ -->
+<section class="section menus" id="fitur">
+  <div class="container">
+    <div class="section-label">Menu Utama</div>
+    <h2 class="section-title">Empat menu.<br />Semua yang kamu butuhkan.</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-icon">🛒</div>
+        <h3>Kasir (POS)</h3>
+        <ul>
+          <li>Cari &amp; scan barcode produk</li>
+          <li>Keranjang belanja real-time</li>
+          <li>Tunai, Transfer, QRIS, Utang</li>
+          <li>Kembalian otomatis</li>
+          <li>Tombol cepat nominal Rp 10rb–1jt</li>
+          <li>Print / bagikan struk</li>
+        </ul>
       </div>
-      <div class="footer-bottom container">
-        <p>© 2026 KasirCepat · Flagodna · Private / Proprietary</p>
-        <p>Dibuat dengan jujur di Indonesia 🇮🇩</p>
+      <div class="menu-card">
+        <div class="menu-card-icon">📦</div>
+        <h3>Produk</h3>
+        <ul>
+          <li>Nama, harga jual &amp; modal</li>
+          <li>Stok &amp; stok minimum</li>
+          <li>Barcode scanner langsung</li>
+          <li>Foto produk dari kamera</li>
+          <li>Kategori &amp; status aktif/nonaktif</li>
+          <li>Import / Export CSV (Excel)</li>
+        </ul>
       </div>
-    </footer>
-  </body>
+      <div class="menu-card">
+        <div class="menu-card-icon">📋</div>
+        <h3>Riwayat</h3>
+        <ul>
+          <li>Filter: hari ini, 7 hari, bulan ini</li>
+          <li>Filter per metode pembayaran</li>
+          <li>Total pendapatan &amp; laba bersih</li>
+          <li>Edit / hapus transaksi</li>
+          <li>Stok otomatis kembali saat dihapus</li>
+          <li>Cetak ulang struk kapanpun</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-icon">⚙️</div>
+        <h3>Profil &amp; Pengaturan</h3>
+        <ul>
+          <li>Info toko (tampil di struk)</li>
+          <li>Kelola kategori produk</li>
+          <li>Auto Pay &amp; Auto Print</li>
+          <li>Printer thermal WiFi/BT/USB</li>
+          <li>Backup &amp; restore lokal</li>
+          <li>Export CSV transaksi &amp; produk</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FEATURES DETAIL ░░ -->
+<section class="section features" style="background:var(--gray-100)">
+  <div class="container">
+    <div class="section-label">Fitur Lengkap</div>
+    <h2 class="section-title">Semua yang kamu<br />butuhkan. Tidak lebih.</h2>
+    <div class="features-cols">
+      <div>
+        <h4 class="feature-col-title">Core POS</h4>
+        <ul class="feature-list">
+          <li>Checkout cepat dengan scan barcode</li>
+          <li>Metode bayar: Tunai, Transfer, QRIS, Utang</li>
+          <li>Kembalian dihitung otomatis</li>
+          <li>Stok otomatis berkurang setiap transaksi</li>
+          <li>Pelacakan utang pelanggan</li>
+          <li>Print struk (printer thermal 58/80mm)</li>
+          <li>Kirim struk via WhatsApp</li>
+          <li>Riwayat transaksi tidak pernah dihapus</li>
+          <li>Laporan pendapatan &amp; laba bersih harian</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="feature-col-title">Kasir Bersama (PRO)</h4>
+        <ul class="feature-list">
+          <li>Hubungkan beberapa HP / PC lewat WiFi</li>
+          <li>Mode: Keranjang, Scanner, Cek Stok</li>
+          <li>Mode: Mutasi Stok &amp; Laporan real-time</li>
+          <li>Kasir mandiri dari perangkat klien</li>
+          <li>Tanpa internet — cukup WiFi toko</li>
+          <li>Tanpa akun cloud</li>
+        </ul>
+        <h4 class="feature-col-title" style="margin-top:2rem">Backup &amp; Export</h4>
+        <ul class="feature-list">
+          <li>Backup data dengan password</li>
+          <li>Restore kapanpun dari file backup</li>
+          <li>Export CSV produk &amp; transaksi</li>
+          <li>Export PDF laporan penjualan</li>
+          <li>Import produk dari file CSV</li>
+        </ul>
+      </div>
+      <div class="feature-unique">
+        <h4 class="feature-col-title">Khusus Usaha Kecil 🏪</h4>
+        <ul class="feature-list">
+          <li>Lacak utang pelanggan per nama</li>
+          <li>Notifikasi stok menipis</li>
+          <li>Laporan laba/rugi (harga modal vs jual)</li>
+          <li>Laporan per metode pembayaran</li>
+          <li>Scanner barcode hardware USB/BT (PRO)</li>
+          <li>Stok tidak terbatas tanpa cek (PRO)</li>
+          <li>Auto Print struk otomatis (PRO)</li>
+          <li>Foto produk langsung dari kamera</li>
+          <li>Kategori produk custom</li>
+          <li>Nomor struk dengan prefix custom</li>
+          <li>Nama perangkat / kasir per device</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ PRICING ░░ -->
+<section class="section pricing" id="paket">
+  <div class="container">
+    <div class="section-label">Paket</div>
+    <h2 class="section-title">Transparan.<br />Tidak ada jebakan.</h2>
+    <div class="pricing-grid">
+
+      <!-- FREE -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Gratis Selamanya</div>
+        <h3 class="pricing-name">Free</h3>
+        <div class="pricing-price-wrap">
+          <div class="pricing-price">Rp 0</div>
+          <div class="pricing-period">Tidak perlu kartu kredit</div>
+        </div>
+        <ul class="pricing-features">
+          <li>1 perangkat</li>
+          <li>POS offline penuh</li>
+          <li>Produk &amp; transaksi tidak terbatas</li>
+          <li>Riwayat transaksi — tidak pernah dihapus</li>
+          <li>Laporan harian</li>
+          <li>Backup &amp; restore lokal</li>
+          <li>Export CSV produk &amp; transaksi</li>
+          <li class="pricing-na">Kasir Bersama multi-device</li>
+          <li class="pricing-na">Auto Print &amp; Scanner hardware</li>
+        </ul>
+        <a href="#download" class="btn btn-outline">Unduh Gratis</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="pricing-card pricing-featured">
+        <div style="position:absolute;top:18px;right:-1px;background:var(--orange);color:#fff;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px 4px 10px;border-radius:4px 0 0 4px">TERLARIS</div>
+        <div class="pricing-badge">Sekali Bayar · 1 Tahun</div>
+        <h3 class="pricing-name">Pro</h3>
+        <div class="pricing-price-wrap">
+          <div class="pricing-price-original">Rp 229.000 / tahun</div>
+          <div style="display:flex;align-items:baseline;gap:6px">
+            <div class="pricing-price">Rp 129.000</div>
+            <div class="pricing-period">/ tahun</div>
+          </div>
+          <span class="pricing-save">Hemat Rp 100.000 🎉</span>
+        </div>
+        <ul class="pricing-features">
+          <li><strong>Semua fitur Free</strong></li>
+          <li>Kasir Bersama — multi-device via WiFi</li>
+          <li>Stok tidak terbatas (tanpa cek)</li>
+          <li>Auto Print struk otomatis</li>
+          <li>Scanner barcode USB / Bluetooth</li>
+          <li>Export PDF laporan</li>
+          <li>Laporan lebih lengkap</li>
+          <li>Dukungan prioritas via WhatsApp</li>
+        </ul>
+        <a href="./beli/index.html" class="btn btn-primary">Beli KasirCepat Pro</a>
+      </div>
+
+      <!-- CLOUD+ -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Masa Depan · Opsional</div>
+        <h3 class="pricing-name">Cloud+</h3>
+        <div class="pricing-price-wrap">
+          <div class="pricing-price" style="color:var(--gray-500)">TBD</div>
+          <div class="pricing-period">Belum tersedia</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Backup online terenkripsi</li>
+          <li>Multi cabang</li>
+          <li>Remote monitoring owner</li>
+          <li class="pricing-note">Cloud+ tidak akan pernah jadi syarat untuk fitur dasar</li>
+        </ul>
+        <a href="https://github.com/Flagodna-Developer/kasir-cepat/releases" target="_blank" class="btn btn-outline">Pantau Update</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ DOWNLOAD ░░ -->
+<section class="section download" id="download">
+  <div class="container">
+    <div class="section-label">Unduh</div>
+    <h2 class="section-title">Tersedia di tiga<br />platform.</h2>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-icon">📱</div>
+        <div class="download-badge">Tersedia di Play Store</div>
+        <h3 class="download-name">Android</h3>
+        <ul class="download-specs">
+          <li>Google Play Store</li>
+          <li>Android 8.0+</li>
+          <li>Gratis, tanpa iklan</li>
+        </ul>
+        <a href="https://play.google.com/store/apps/details?id=com.flagodna.kasircepat" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center">Unduh di Play Store</a>
+      </div>
+      <div class="download-card">
+        <div class="download-icon">🪟</div>
+        <div class="download-badge">Tersedia</div>
+        <h3 class="download-name">Windows</h3>
+        <ul class="download-specs">
+          <li>Windows 10 / 11</li>
+          <li>64-bit</li>
+          <li>Installer .exe</li>
+        </ul>
+        <a href="https://github.com/Flagodna-Developer/kasir-cepat/releases" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center">Unduh di GitHub</a>
+      </div>
+      <div class="download-card">
+        <div class="download-icon">🐧</div>
+        <div class="download-badge">Tersedia</div>
+        <h3 class="download-name">Linux</h3>
+        <ul class="download-specs">
+          <li>Ubuntu / Debian / Fedora</li>
+          <li>AppImage &amp; .deb</li>
+          <li>64-bit</li>
+        </ul>
+        <a href="https://github.com/Flagodna-Developer/kasir-cepat/releases" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center">Unduh di GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ PROMISE ░░ -->
+<section class="section promise">
+  <div class="container promise-inner">
+    <div class="promise-quote">
+      <span class="quote-mark">"</span>
+      <blockquote>Kompetitor membangun kasir untuk investor mereka.<br />Kami membangun kasir untuk tokomu.</blockquote>
+    </div>
+    <div class="promise-text">
+      <h3>Filosofi Produk</h3>
+      <ul class="philosophy-list">
+        <li>Simpel lebih penting dari banyak fitur</li>
+        <li>Stabil lebih penting dari hype</li>
+        <li>Cepat lebih penting dari cantik</li>
+        <li>Data pengguna bukan produk kami</li>
+        <li>Fitur gratis tidak akan pindah ke Pro</li>
+      </ul>
+      <p class="philosophy-close">Pengguna kecil juga pantas software yang jujur.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo">
+        <img src="assets/icon/kasir-cepat.png" alt="KasirCepat Logo" class="logo-image" onerror="this.style.display='none'" />
+        <span class="logo-text">KasirCepat</span>
+      </a>
+      <p class="footer-tagline">Tokomu, Datamu, Kendalimu.</p>
+      <p class="footer-flagodna">Bagian dari ekosistem <a href="https://flagodna.com" target="_blank" rel="noopener">Flagodna</a> — studio teknologi privacy-first untuk kehidupan sehari-hari.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Produk</h5>
+        <a href="#fitur">Fitur</a>
+        <a href="#paket">Paket</a>
+        <a href="#download">Unduh</a>
+        <a href="./panduan/index.html">Panduan</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="./documents/kebijakan-privasi/index.html">Kebijakan Privasi</a>
+        <a href="./documents/syarat-penggunaan/index.html">Syarat Penggunaan</a>
+        <a href="./documents/kontak/index.html">Kontak</a>
+      </div>
+      <div class="footer-col">
+        <h5>Komunitas</h5>
+        <a href="https://github.com/Flagodna-Developer/kasir-cepat" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://flagodna.com" target="_blank" rel="noopener">Flagodna</a>
+        <a href="./versi-baru/index.html">Versi Baru</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2026 KasirCepat · Flagodna · Private / Proprietary</p>
+    <p>Dibuat dengan jujur di Indonesia 🇮🇩</p>
+  </div>
+</footer>
+
+</body>
 </html>
