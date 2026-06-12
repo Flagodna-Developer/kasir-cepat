@@ -1,172 +1,152 @@
 # KasirCepat
 
-> **Tokomu, Datamu, Kendalimu.**
-> Kasir untuk pebisnis yang percaya data toko mereka adalah amanah — bukan komoditas.
+[![SourceForge Downloads](https://img.shields.io/sourceforge/dt/kasir-cepat?style=flat-square&logo=sourceforge&label=SourceForge%20Downloads&color=orange)](https://sourceforge.net/projects/kasir-cepat/)
+[![GitHub Downloads](https://img.shields.io/github/downloads/Flagodna-Developer/kasir-cepat/total?style=flat-square&logo=github&label=GitHub%20Downloads)](https://github.com/Flagodna-Developer/kasir-cepat/releases)
+
+<h3 align="center">
+The Honest POS for Small Businesses
+</h3>
+
+<p align="center">
+Your Shop. Your Data. Your Control.
+</p>
+
+<p align="center">
+Offline-first point of sale software for warung, retail stores, market stalls, and independent businesses.
+</p>
+
+---
 
 ![KasirCepat Banner](assets/images/banner.jpg)
 
----
+## Built for Business Owners, Not Vendor Lock-In
 
-## Tentang Project
+KasirCepat is an offline-first Point of Sale system designed for small businesses that need reliability, simplicity, and ownership.
 
-**KasirCepat** adalah aplikasi POS (Point of Sale) offline-first untuk warung, toko kelontong, kios pasar, toko pakaian kecil, counter HP, usaha rumahan, dan kedai makanan sederhana di Indonesia.
+Whether you're running a warung, grocery store, mobile phone counter, clothing shop, café, or market stall, KasirCepat helps you manage sales and inventory without depending on an internet connection.
 
-Dibuat oleh [Flagodna](https://flagodna.com) — dengan filosofi yang sama seperti seluruh aplikasi kami: **data milik pengguna, bukan milik kami.**
+Your transactions continue even when the network doesn't.
 
----
+Your business data stays under your control.
 
-## Masalah yang Kami Lihat
-
-Aplikasi kasir yang ada sekarang punya masalah yang sama:
-
-- Produk ke-31 dikunci sampai kamu bayar langganan
-- Data transaksi lama dihapus otomatis tanpa izin
-- "Offline mode" hanya fallback darurat — sync, backup, login tetap butuh internet
-- Privacy policy memperbolehkan data tokomu dianalisa dan dilisensikan ke pihak ketiga
-- UI dibuat untuk impress investor, bukan untuk si kasir yang pegang HP saat toko ramai
-
-KasirCepat tidak melakukan semua itu.
+No unnecessary complexity. No dependency on cloud infrastructure.
 
 ---
 
-## Nilai Utama
+## Why Businesses Choose KasirCepat
 
-**Offline first, bukan offline fallback.**
-Transaksi tetap berjalan meski internet mati. Bukan karena "mode darurat" — tapi karena memang dirancang begitu dari awal.
+### Offline First
 
-**Data 100% milik pengguna.**
-Tidak ada server kami yang menyentuh data transaksi tokomu. Tidak ada analitik tersembunyi. Tidak ada lisensi data ke pihak ketiga. Data tersimpan di perangkatmu — titik.
+KasirCepat is designed to work without internet access. Sales, inventory, and daily operations continue normally even during network interruptions.
 
-**Sinkronisasi lokal tanpa cloud.**
-HP kasir dan laptop owner bisa sinkron lewat Wi-Fi toko atau hotspot HP — tanpa perlu internet, tanpa perlu akun, tanpa perlu server kami di tengah-tengah.
+### Your Data Stays Yours
 
-**Dibuat untuk si kasir, bukan untuk ownernya.**
-Satu layar. Satu alur. Langsung bisa dipakai tanpa training. Karena yang pegang HP saat toko ramai adalah karyawan — bukan founder yang baca pitch deck.
+Business data remains on your device. You decide where it is stored, backed up, and shared.
 
----
+### Built for Real Shops
 
-## Fitur MVP
+Designed around the daily workflow of small shops, retail stores, kiosks, and independent merchants.
 
-### Core POS
+### Multi-Platform
 
-- Tambah / edit / hapus produk
-- Kategori produk
-- Checkout cepat
-- Search produk
-- Input qty cepat
-- Riwayat transaksi
-- Ringkasan penjualan harian
-- Stok otomatis berkurang
-- Lacak utang pelanggan
-- Print struk (Bluetooth printer)
-- Kirim struk via WhatsApp
+Use KasirCepat on Android, Windows, and Linux using the devices you already own.
 
-### Sync Lokal
+### Local Network Synchronization
 
-- Sync Android ↔ Android
-- Sync Android ↔ Desktop
-- Auto detect device di jaringan yang sama
-- Push transaksi realtime
-- Manual sync button
-- Conflict handling sederhana
+Connect multiple devices through local WiFi without requiring cloud servers.
 
-### Export & Backup
+### Transparent Pricing
 
-- Export CSV
-- Export PDF laporan
-- Backup file lokal
-- Restore data
+Free forever for single-device usage. Upgrade only when your business needs multi-device support.
 
 ---
 
-## Fitur Unik KasirCepat
+## Features
 
-| Fitur                     | Keterangan                                              |
-| ------------------------- | ------------------------------------------------------- |
-| 🏪 Lacak Utang (Warung)   | Fitur utang/piutang pelanggan, umum di warung Indonesia |
-| 📡 Sync Lokal tanpa Cloud | Sinkronisasi antar device via Wi-Fi — tanpa internet    |
-| 🔒 Nol Analitik           | Tidak ada tracking, tidak ada data ke server kami       |
-| 💾 Backup Bebas           | File backup di tanganmu, bukan di vendor kami           |
-| 👆 UI untuk Kasir         | Tombol besar, alur tunggal, langsung bisa dipakai       |
-
----
-
-## Paket
-
-### Free
-
-- 1 device
-- POS offline penuh — unlimited produk, unlimited transaksi
-- Riwayat transaksi lengkap, tidak pernah dihapus
-- Laporan harian
-
-### Pro (one-time)
-
-- Sinkronisasi Wi-Fi lokal multi-device
-- Export PDF & CSV
-- Backup & restore premium
-- Tanpa iklan
-- Fitur laporan lebih lengkap
-
-### Cloud+ (masa depan, opsional)
-
-- Backup online
-- Multi cabang
-- Remote monitoring owner
-
-> Cloud+ tidak akan pernah menjadi syarat untuk fitur dasar. Free tetap gratis sepenuhnya.
+- Fast sales transactions
+- Product and inventory management
+- Stock monitoring
+- Sales reports
+- Digital receipts
+- Backup and restore
+- Local WiFi multi-device support
+- Offline-first operation
+- Cross-platform support
+- Lightweight and easy to use
 
 ---
 
-## Roadmap
+## Supported Platforms
 
-**Phase 1 — MVP Offline**
-Product CRUD, checkout, history, daily report. Android.
-
-**Phase 2 — Local Sync**
-Android ↔ Desktop, same Wi-Fi sync, auto reconnect, conflict handling.
-
-**Phase 3 — Pro**
-Pro unlock, better reports, backup tools, Windows stable.
-
-**Phase 4 — Scale**
-Cloud sync optional, multi branch, owner dashboard.
+| Platform | Support |
+| -------- | ------- |
+| Android  | ✅      |
+| Windows  | ✅      |
+| Linux    | ✅      |
 
 ---
 
-## Filosofi Produk
+## Who Is KasirCepat For?
 
-- Simpel lebih penting dari banyak fitur
-- Stabil lebih penting dari hype
-- Cepat lebih penting dari cantik
-- Data pengguna bukan produk kami
-
-> Pengguna kecil juga pantas software yang jujur.
-
----
-
-## Founder Note
-
-> Kompetitor membangun kasir untuk investor mereka.
-> Kami membangun kasir untuk tokomu.
->
-> Kalau KasirCepat solve masalahmu — kamu akan tahu sendiri.
+- Warung owners
+- Grocery stores
+- Market stalls
+- Clothing stores
+- Mobile phone counters
+- Home businesses
+- Small cafés and food stalls
+- Independent retailers
 
 ---
 
-## Privasi & Legal
+## Product Philosophy
 
-KasirCepat berkomitmen penuh pada privasi data penggunanya.
-Baca selengkapnya: [Kebijakan Privasi](/documents/privacy-policy)
+Most software asks businesses to trust the vendor.
+
+KasirCepat asks something simpler:
+
+**Trust your own data.**
+
+We believe business owners should have full control over their transaction history, inventory records, and operational data.
+
+Your store should continue operating regardless of internet availability.
+
+Your business should not depend on someone else's server.
+
+Your data should belong to you.
 
 ---
 
-## Bagian dari Ekosistem Flagodna
+## Download
 
-KasirCepat adalah bagian dari [Flagodna](https://flagodna.com) — studio yang membangun teknologi dengan prinsip privacy-first untuk kehidupan sehari-hari.
+### Official Website
+
+https://flagodna.com/kasir-cepat/
+
+### SourceForge
+
+https://sourceforge.net/projects/kasir-cepat/
+
+### GitHub
+
+https://github.com/Flagodna-Developer/kasir-cepat
+
+---
+
+## About Flagodna
+
+KasirCepat is developed by Flagodna, an independent software studio focused on building practical tools that respect user ownership, privacy, and long-term reliability.
+
+---
+
+## Feedback & Contributions
+
+Bug reports, feature requests, and community contributions are welcome.
+
+If you have ideas to improve KasirCepat, feel free to open an issue or submit a pull request.
 
 ---
 
 ## License
 
-Private / Proprietary © Flagodna
+See the LICENSE file for details.
