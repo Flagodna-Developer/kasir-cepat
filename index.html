@@ -29,66 +29,124 @@
     />
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://flagodna.com/#organization",
-            "name": "FlagoDNA",
-            "url": "https://flagodna.com",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://flagodna-developer.github.io/data/icon/flagodna/flagodna_32.jpg"
-            }
-          },
-          {
-            "@type": "Person",
-            "@id": "https://www.wikidata.org/wiki/Q138566666",
-            "name": "Cahyanudien Aziz Saputra",
-            "alternateName": ["Cahyanudien", "Introversoul"],
-            "url": "https://www.cahyanudien.site",
-            "image": "https://avatars.githubusercontent.com/cas8398",
-            "sameAs": [
-              "https://github.com/cas8398",
-              "https://linkedin.com/in/cahyanudien",
-              "https://x.com/cas8398",
-              "https://www.wikidata.org/wiki/Q138566666"
-            ]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "@id": "https://flagodna-developer.github.io/kasir-cepat#app",
-            "name": "KasirCepat",
-            "url": "https://flagodna-developer.github.io/kasir-cepat/",
-            "image": "https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png",
-            "operatingSystem": "Android, Windows, Linux",
-            "applicationCategory": "BusinessApplication",
-            "description": "Aplikasi kasir offline-first untuk warung, toko kelontong, kios pasar, dan usaha kecil Indonesia. Data 100% milik kamu.",
-            "author": { "@id": "https://www.wikidata.org/wiki/Q138566666" },
-            "publisher": { "@id": "https://flagodna.com/#organization" },
-            "installUrl": "https://play.google.com/store/apps/details?id=com.flagodna.kasircepat",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "featureList": [
-              "Offline-first POS system",
-              "Product management with categories",
-              "Sales history & daily reports",
-              "Debt tracking for customers",
-              "Local Wi-Fi sync between devices",
-              "Bluetooth printer & WhatsApp receipt",
-              "Export to CSV & PDF",
-              "Barcode scanner",
-              "Stock management with alerts",
-              "Import products from CSV"
-            ]
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://flagodna.com/#organization",
+      "name": "FlagoDNA",
+      "url": "https://flagodna.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flagodna-developer.github.io/data/icon/flagodna/flagodna_32.jpg"
       }
-    </script>
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.wikidata.org/wiki/Q138566666",
+      "name": "Cahyanudien Aziz Saputra",
+      "alternateName": [
+        "Cahyanudien",
+        "Introversoul"
+      ],
+      "url": "https://www.cahyanudien.site",
+      "image": "https://avatars.githubusercontent.com/cas8398",
+      "sameAs": [
+        "https://github.com/cas8398",
+        "https://linkedin.com/in/cahyanudien",
+        "https://x.com/cas8398",
+        "https://www.wikidata.org/wiki/Q138566666"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://flagodna.com/kasir-cepat/#website",
+      "url": "https://flagodna.com/kasir-cepat/",
+      "name": "KasirCepat",
+      "publisher": {
+        "@id": "https://flagodna.com/#organization"
+      },
+      "inLanguage": "id-ID"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://flagodna.com/kasir-cepat/#webpage",
+      "url": "https://flagodna.com/kasir-cepat/",
+      "name": "KasirCepat - Aplikasi Kasir Offline untuk UMKM Indonesia",
+      "description": "Aplikasi kasir offline-first untuk warung, toko kelontong, kios pasar, dan UMKM Indonesia.",
+      "isPartOf": {
+        "@id": "https://flagodna.com/kasir-cepat/#website"
+      },
+      "about": {
+        "@id": "https://flagodna.com/kasir-cepat/#app"
+      },
+      "inLanguage": "id-ID"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://flagodna.com/kasir-cepat/#app",
+      "name": "KasirCepat",
+      "url": "https://flagodna.com/kasir-cepat/",
+      "image": "https://flagodna.com/kasir-cepat/assets/icon/kasir-cepat.png",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "PointOfSale",
+      "operatingSystem": [
+        "Android",
+        "Windows",
+        "Linux"
+      ],
+      "description": "Aplikasi kasir offline-first untuk warung, toko kelontong, kios pasar, dan UMKM Indonesia. Kelola penjualan, stok barang, laporan, pelanggan, dan transaksi dalam satu aplikasi.",
+      "author": {
+        "@id": "https://www.wikidata.org/wiki/Q138566666"
+      },
+      "creator": {
+        "@id": "https://www.wikidata.org/wiki/Q138566666"
+      },
+      "publisher": {
+        "@id": "https://flagodna.com/#organization"
+      },
+      "installUrl": "https://play.google.com/store/apps/details?id=com.flagodna.kasircepat",
+      "sameAs": [
+        "https://flagodna.com/kasir-cepat/blog/",
+        "https://www.instagram.com/kasircepat.app/",
+        "https://www.tiktok.com/@kasircepat.app",
+        "https://www.youtube.com/@kasircepat"
+      ],
+      "keywords": [
+        "aplikasi kasir",
+        "POS Android",
+        "kasir offline",
+        "point of sale",
+        "manajemen stok",
+        "stok barang",
+        "UMKM Indonesia",
+        "warung",
+        "toko kelontong"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Offline-first POS system",
+        "Product management with categories",
+        "Sales history and daily reports",
+        "Debt tracking for customers",
+        "Local Wi-Fi synchronization",
+        "Bluetooth printer support",
+        "WhatsApp receipt sharing",
+        "Export to CSV",
+        "Export to PDF",
+        "Barcode scanner support",
+        "Stock management with alerts",
+        "Import products from CSV"
+      ]
+    }
+  ]
+}
+</script>
   </head>
 <body>
 
@@ -533,6 +591,7 @@
         <a href="./documents/kebijakan-privasi/index.html">Kebijakan Privasi</a>
         <a href="./documents/syarat-penggunaan/index.html">Syarat Penggunaan</a>
         <a href="./documents/kontak/index.html">Kontak</a>
+        <a href="https://flagodna.com/kasir-cepat/blog/" target="_blank">Blog</a>
       </div>
       <div class="footer-col">
         <h5>Komunitas</h5>
