@@ -393,18 +393,15 @@
         emailInput.removeAttribute("aria-invalid");
 
         const email = emailInput.value.trim();
-        if (!email) {
-          return showError("Masukkan alamat email Anda.");
-        }
+        if (!email) return showError("Masukkan alamat email Anda.");
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
           return showError("Format email belum benar. Contoh: nama@email.com");
         }
 
-        // Honeypot terisi = bot: pura-pura sukses, tidak kirim apa pun.
         if (form.elements["_gotcha"]?.value) return showSuccess();
 
-        // Pengaman tambahan kalau tombol lolos dari kondisi disabled
-        if (!form.elements["cf-turnstile-response"]?.value) {
+        const turnstileToken = form.elements["cf-turnstile-response"]?.value;
+        if (!turnstileToken) {
           return showError("Tunggu verifikasi selesai, lalu coba lagi.");
         }
 
@@ -413,18 +410,35 @@
         try {
           const res = await fetch(ENDPOINT, {
             method: "POST",
-            headers: { Accept: "application/json" },
-            body: new FormData(form),
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              email: email,
+              token: turnstileToken,
+            }),
           });
-          if (!res.ok) throw new Error("HTTP " + res.status);
+
+          // Baca pesan error dari backend kalau ada
+          let data = null;
+          try {
+            data = await res.json();
+          } catch (_) {}
+
+          if (!res.ok) {
+            throw new Error(
+              data?.message || data?.error || "HTTP " + res.status
+            );
+          }
           showSuccess();
         } catch (err) {
           showError(
-            "Pendaftaran belum berhasil. Periksa koneksi internet Anda lalu coba lagi."
+            err.message ||
+              "Pendaftaran belum berhasil. Periksa koneksi internet Anda lalu coba lagi."
           );
         } finally {
           submitBtn.textContent = "Daftar";
-          // Token hanya sekali pakai: minta token baru, tombol nonaktif sampai valid lagi.
           submitBtn.disabled = true;
           if (window.turnstile) turnstile.reset();
         }
