@@ -812,3 +812,186 @@
  .checkout-layout {
      animation: fadeUp .4s ease .3s both
  }
+
+
+ /* ── Tab metode ── */
+ .pay-tabs {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+     gap: 10px;
+     margin: 4px 0 22px;
+ }
+
+ .pay-tab {
+     font: inherit;
+     text-align: left;
+     display: flex;
+     flex-direction: column;
+     gap: 2px;
+     padding: 12px 14px;
+     border: 1.5px solid var(--gray-200, #e7dfd6);
+     border-radius: 12px;
+     background: var(--white, #fff);
+     color: var(--gray-700, #4a4038);
+     cursor: pointer;
+     transition: border-color 0.15s, background 0.15s;
+ }
+
+ .pay-tab:hover {
+     border-color: var(--orange, #f97316);
+ }
+
+ .pay-tab[aria-selected="true"] {
+     border-color: var(--orange, #f97316);
+     background: rgba(249, 115, 22, 0.07);
+     box-shadow: 0 0 0 1px var(--orange, #f97316) inset;
+ }
+
+ .pay-tab:focus-visible {
+     outline: 3px solid rgba(249, 115, 22, 0.35);
+     outline-offset: 2px;
+ }
+
+ .pay-tab-name {
+     font-weight: 700;
+     font-size: 14.5px;
+ }
+
+ .pay-tab-sub {
+     font-size: 12px;
+     color: var(--gray-500, #6b625a);
+ }
+
+ /* ── Panel ── */
+ .pay-panel[hidden] {
+     display: none;
+ }
+
+ /* ── Blok nominal (QRIS & PayPal) ── */
+ .pay-amount {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 16px;
+     margin-top: 18px;
+     padding: 16px 18px;
+     border: 1.5px dashed var(--gray-200, #e7dfd6);
+     border-radius: 12px;
+ }
+
+ .pay-amount-label {
+     font-size: 13px;
+     color: var(--gray-500, #6b625a);
+ }
+
+ .pay-amount-note {
+     font-size: 12px;
+     color: var(--gray-500, #6b625a);
+     margin-top: 2px;
+ }
+
+ .pay-amount-value {
+     font-family: "Fraunces", Georgia, serif;
+     font-weight: 700;
+     font-size: 24px;
+     color: var(--orange, #f97316);
+     text-align: right;
+     white-space: nowrap;
+ }
+
+ /* ── QRIS ── */
+ .qris-box {
+     margin: 18px auto 0;
+     max-width: 320px;
+     text-align: center;
+ }
+
+ .qris-img {
+     display: block;
+     width: 100%;
+     height: auto;
+     border: 1px solid var(--gray-200, #e7dfd6);
+     border-radius: 14px;
+     background: #fff;
+ }
+
+ .qris-caption {
+     margin-top: 10px;
+     font-size: 14px;
+     color: var(--gray-700, #4a4038);
+ }
+
+ .qris-fallback {
+     padding: 28px 16px;
+     border: 1.5px dashed var(--gray-200, #e7dfd6);
+     border-radius: 14px;
+     font-size: 14px;
+     color: var(--gray-500, #6b625a);
+ }
+
+ .pay-link {
+     display: inline-block;
+     margin-top: 8px;
+     font-size: 13.5px;
+     font-weight: 600;
+     color: var(--orange, #f97316);
+     text-decoration: none;
+ }
+
+ .pay-link:hover {
+     text-decoration: underline;
+ }
+
+ /* ── PayPal: penerima ── */
+ .pay-recipient {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 12px;
+     margin-top: 18px;
+     padding: 14px 16px;
+     border: 1.5px solid var(--gray-200, #e7dfd6);
+     border-radius: 12px;
+ }
+
+ .pay-recipient-label {
+     font-size: 12.5px;
+     color: var(--gray-500, #6b625a);
+ }
+
+ .pay-recipient-value {
+     font-weight: 700;
+     font-size: 15px;
+     word-break: break-all;
+ }
+
+ .pay-panel .form-group {
+     margin-top: 18px;
+     margin-bottom: 0;
+ }
+
+ /* ── Pesan kesalahan konfirmasi ── */
+ .wa-error {
+     min-height: 20px;
+     margin: 10px 0 0;
+     font-size: 13.5px;
+     text-align: center;
+     color: #b42318;
+ }
+
+ @media (max-width: 480px) {
+     .pay-amount {
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .pay-amount-value {
+         text-align: left;
+     }
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+     .pay-tab {
+         transition: none;
+     }
+ }

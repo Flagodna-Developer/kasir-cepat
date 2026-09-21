@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter — KasirCepat</title>
+    <meta
+      name="description"
+      content="Daftar newsletter KasirCepat: kabar fitur baru, tips jualan, dan promo lisensi Pro langsung ke email Anda."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
+    <link rel="preconnect" href="https://challenges.cloudflare.com" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png"
+    />
+    <link rel="stylesheet" href="../assets/css/pricing.css" />
+    <link rel="stylesheet" href="../assets/css/newsletter.css" />
+  </head>
+  <body>
+    <!-- ░░ NAV ░░ -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <img
+            src="https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png"
+            alt="KasirCepat"
+            class="logo-image"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"
+          />
+          <span class="logo-mark" style="display: none">KC</span>
+          <span class="logo-text">KasirCepat</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Beranda</a>
+          <a href="../panduan/index.html">Panduan</a>
+          <a href="../harga/index.html">Harga</a>
+          <a href="#" style="color: var(--orange); font-weight: 600"
+            >Newsletter</a
+          >
+          <a href="../index.html#download">Unduh</a>
+          <a
+            href="../beli/index.html"
+            class="nav-cta btn"
+            style="padding: 8px 18px; font-size: 14px"
+            >Beli Pro</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ░░ HERO ░░ -->
+      <div class="main-hero">
+        <div class="container">
+          <span class="main-hero-badge">📩 Newsletter</span>
+          <h1>Dapatkan <em>update</em> KasirCepat <br />di email Anda.</h1>
+          <p>
+            Kabar singkat untuk pemilik usaha: apa yang baru di aplikasi, cara
+            jualan yang lebih lancar, dan kabar promo lisensi Pro.
+          </p>
+        </div>
+      </div>
+      <!-- ░░ HERO + FORM ░░ -->
+      <section class="nl-hero">
+        <div class="container nl-hero-grid">
+          <div>
+            <ul class="nl-checks" aria-label="Isi newsletter">
+              <li>Fitur baru</li>
+              <li>Tips jualan</li>
+              <li>Promo lisensi</li>
+            </ul>
+
+            <form id="nl-form" novalidate>
+              <label class="nl-form-label" for="nl-email">Email Anda</label>
+              <div class="nl-form-row">
+                <input
+                  class="nl-input"
+                  id="nl-email"
+                  name="email"
+                  type="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  placeholder="nama@email.com"
+                  required
+                  aria-describedby="nl-status"
+                />
+
+                <button
+                  class="btn btn-primary nl-submit"
+                  type="submit"
+                  disabled
+                >
+                  Daftar
+                </button>
+              </div>
+              <!-- Honeypot -->
+              <div class="nl-hp" aria-hidden="true">
+                <label
+                  >Jangan diisi
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    tabindex="-1"
+                    autocomplete="off"
+                /></label>
+              </div>
+
+              <div class="nl-turnstile">
+                <div
+                  class="cf-turnstile"
+                  data-sitekey="0x4AAAAAAE_HbIV7EN3wkzYs"
+                  data-language="id"
+                  data-callback="onTurnstileSuccess"
+                  data-expired-callback="onTurnstileExpired"
+                  data-error-callback="onTurnstileError"
+                ></div>
+              </div>
+
+              <p
+                class="nl-status"
+                id="nl-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+
+            <div class="nl-success" id="nl-success" hidden tabindex="-1">
+              <h2>Satu langkah lagi</h2>
+              <p>
+                Kami sudah mengirim email konfirmasi. Buka email itu dan klik
+                tautannya untuk menyelesaikan pendaftaran. Belum masuk? Cek
+                folder spam.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contoh isi email -->
+          <aside aria-label="Contoh isi newsletter">
+            <div class="nl-mail">
+              <div class="nl-mail-bar">
+                <span class="nl-avatar" aria-hidden="true">KC</span>
+                <div>
+                  <div class="nl-mail-from">Contoh Kabar KasirCepat</div>
+                  <div class="nl-mail-meta">
+                    Cara restore data di aplikasi KasirCepat
+                  </div>
+                </div>
+              </div>
+              <div class="nl-mail-body">
+                <p class="nl-mail-hello">
+                  Ganti HP atau data toko hilang? Selama Anda punya file backup,
+                  data bisa dipulihkan.
+                </p>
+                <div class="nl-item">
+                  <div>
+                    <p>
+                      Caranya: Buka Profil → Backup &amp; Restore, masukkan
+                      password yang sama saat backup, lalu ketuk Restore Data
+                      dan pilih file backup yang ingin dipulihkan…
+                      <a href="../panduan/index.html#backup"
+                        >Baca selengkapnya</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <p class="nl-mail-sign">Salam,<br />Tim KasirCepat</p>
+              </div>
+              <div class="nl-mail-foot">
+                Berhenti berlangganan kapan saja lewat tautan di bawah email.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ░░ ISI NEWSLETTER ░░ -->
+      <section class="nl-topics">
+        <div class="container">
+          <h2>Yang akan Anda terima</h2>
+
+          <div class="nl-topic">
+            <h3>Fitur baru</h3>
+            <p>
+              Setiap ada rilis, Anda tahu apa yang berubah dan apa gunanya untuk
+              toko Anda, tanpa harus membaca catatan teknis.
+              <em>Anda tahu lebih dulu, sebelum pelanggan bertanya.</em>
+            </p>
+          </div>
+          <div class="nl-topic">
+            <h3>Tips jualan</h3>
+            <p>
+              Saran singkat yang bisa langsung dicoba: mengatur harga, merapikan
+              daftar produk, membaca laporan, dan memakai Kasir Bersama saat
+              toko ramai.
+            </p>
+          </div>
+          <div class="nl-topic">
+            <h3>Promo lisensi</h3>
+            <p>
+              Kabar promo Pro dan pengingat perpanjangan. Kami tidak pernah
+              mengunci fitur gratis, jadi email promo hanya berisi tawaran
+              tambahan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ JANJI ░░ -->
+      <section class="nl-promise">
+        <div class="container">
+          <h2>Newsletter yang menghargai waktu dan data Anda.</h2>
+          <ul>
+            <li>Tidak ada spam dan tidak ada email harian.</li>
+            <li>Email Anda tidak dijual atau dibagikan.</li>
+            <li>
+              Data transaksi toko tetap di perangkat Anda. Newsletter tidak
+              mengaksesnya.
+            </li>
+            <li>Berhenti berlangganan cukup satu klik.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ░░ FAQ ░░ -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="faq-inner">
+            <span class="faq-label">Pertanyaan Umum</span>
+            <h2 class="faq-title">Sebelum mendaftar</h2>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Apakah saya harus memakai KasirCepat Pro?<span class="faq-icon"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                Tidak. Newsletter terbuka untuk semua pengguna, termasuk versi
+                Free, dan tidak mempengaruhi lisensi Anda.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">
+                Seberapa sering email dikirim?<span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                Maksimal 2 kali sebulan. Jika belum ada kabar penting, kami
+                tidak mengirim apa-apa.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">
+                Bagaimana cara berhenti berlangganan?<span class="faq-icon"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                Klik tautan "Berhenti berlangganan" di bagian bawah setiap
+                email. Prosesnya langsung, tanpa perlu login atau alasan.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">
+                Apa yang terjadi pada email saya?<span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                Email hanya dipakai untuk mengirim newsletter KasirCepat. Kami
+                tidak menjualnya dan tidak membagikannya ke pihak lain.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ░░ FOOTER ░░ -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <a href="../index.html" class="nav-logo">
+            <img
+              src="https://flagodna-developer.github.io/kasir-cepat/assets/icon/kasir-cepat.png"
+              alt="KasirCepat"
+              class="logo-image"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"
+            />
+            <span class="logo-mark" style="display: none">KC</span>
+            <span class="logo-text">KasirCepat</span>
+          </a>
+          <p class="footer-tagline">Tokomu, Datamu, Kendalimu.</p>
+          <p class="footer-flagodna">
+            Bagian dari ekosistem
+            <a href="https://flagodna.com" target="_blank" rel="noopener"
+              >Flagodna</a
+            >
+            — studio teknologi privacy-first untuk kehidupan sehari-hari.
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Produk</h5>
+            <a href="../index.html#fitur">Fitur</a>
+            <a href="../harga/index.html#paket">Paket</a>
+            <a href="../index.html#download">Unduh</a>
+            <a href="../panduan/index.html">Panduan</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="../documents/kebijakan-privasi/index.html"
+              >Kebijakan Privasi</a
+            >
+            <a href="../documents/syarat-penggunaan/index.html"
+              >Syarat Penggunaan</a
+            >
+            <a href="../documents/kontak/index.html">Kontak</a>
+            <a href="https://flagodna.com/kasir-cepat/blog/" target="_blank"
+              >Blog</a
+            >
+          </div>
+          <div class="footer-col">
+            <h5>Komunitas</h5>
+            <a
+              href="https://github.com/Flagodna-Developer/kasir-cepat"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a href="https://flagodna.com" target="_blank" rel="noopener"
+              >Flagodna</a
+            >
+            <a href="../versi-baru/index.html">Versi Baru</a>
+            <a href="#">Newsletter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <p>© 2026 KasirCepat · Flagodna · Private / Proprietary</p>
+        <p>Dibuat dengan jujur di Indonesia 🇮🇩</p>
+      </div>
+    </footer>
+
+    <script>
+      const ENDPOINT =
+        "https://api.flagodna.my.id/api/kasircepat/newsletter/subscribe/";
+
+      const form = document.getElementById("nl-form");
+      const emailInput = document.getElementById("nl-email");
+      const statusEl = document.getElementById("nl-status");
+      const successEl = document.getElementById("nl-success");
+      const submitBtn = form.querySelector(".nl-submit");
+
+      function showError(msg) {
+        statusEl.textContent = msg;
+        emailInput.setAttribute("aria-invalid", "true");
+        emailInput.focus();
+      }
+
+      function showSuccess() {
+        form.hidden = true;
+        successEl.hidden = false;
+        successEl.focus();
+      }
+
+      /* Turnstile: tombol Daftar hanya aktif saat verifikasi valid */
+      function onTurnstileSuccess() {
+        statusEl.textContent = "";
+        submitBtn.disabled = false;
+      }
+      function onTurnstileExpired() {
+        submitBtn.disabled = true;
+      }
+      function onTurnstileError() {
+        submitBtn.disabled = true;
+        statusEl.textContent =
+          "Verifikasi gagal dimuat. Muat ulang halaman lalu coba lagi.";
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        statusEl.textContent = "";
+        emailInput.removeAttribute("aria-invalid");
+
+        const email = emailInput.value.trim();
+        if (!email) {
+          return showError("Masukkan alamat email Anda.");
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+          return showError("Format email belum benar. Contoh: nama@email.com");
+        }
+
+        // Honeypot terisi = bot: pura-pura sukses, tidak kirim apa pun.
+        if (form.elements["_gotcha"]?.value) return showSuccess();
+
+        // Pengaman tambahan kalau tombol lolos dari kondisi disabled
+        if (!form.elements["cf-turnstile-response"]?.value) {
+          return showError("Tunggu verifikasi selesai, lalu coba lagi.");
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Mengirim…";
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: new FormData(form),
+          });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          showSuccess();
+        } catch (err) {
+          showError(
+            "Pendaftaran belum berhasil. Periksa koneksi internet Anda lalu coba lagi."
+          );
+        } finally {
+          submitBtn.textContent = "Daftar";
+          // Token hanya sekali pakai: minta token baru, tombol nonaktif sampai valid lagi.
+          submitBtn.disabled = true;
+          if (window.turnstile) turnstile.reset();
+        }
+      });
+
+      /* FAQ accordion */
+      document.querySelectorAll(".faq-q").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".faq-item");
+          const isOpen = item.classList.contains("open");
+          document
+            .querySelectorAll(".faq-item.open")
+            .forEach((i) => i.classList.remove("open"));
+          if (!isOpen) item.classList.add("open");
+        });
+      });
+    </script>
+  </body>
+</html>
