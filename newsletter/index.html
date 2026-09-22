@@ -92,9 +92,9 @@
                   type="email"
                   inputmode="email"
                   autocomplete="email"
-                  placeholder="nama@email.com"
+                  placeholder="nama@gmail.com"
                   required
-                  aria-describedby="nl-status"
+                  aria-describedby="nl-status nl-gmail-hint"
                 />
 
                 <button
@@ -105,6 +105,10 @@
                   Daftar
                 </button>
               </div>
+              <p class="nl-gmail-hint" id="nl-gmail-hint">
+                Untuk saat ini, pendaftaran hanya menerima alamat Gmail
+                (@gmail.com).
+              </p>
               <!-- Honeypot -->
               <div class="nl-hp" aria-hidden="true">
                 <label
@@ -127,7 +131,11 @@
                   data-error-callback="onTurnstileError"
                 ></div>
               </div>
-
+              <p class="nl-trial-note">
+                🎁 Konfirmasi email Anda dan dapatkan
+                <strong>Trial Pro 3 hari</strong>
+                gratis — coba Kasir Bersama, Auto Print, dan fitur Pro lainnya.
+              </p>
               <p
                 class="nl-status"
                 id="nl-status"
@@ -397,7 +405,11 @@
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
           return showError("Format email belum benar. Contoh: nama@email.com");
         }
-
+        if (!/@gmail\.com$/i.test(email)) {
+          return showError(
+            "Saat ini pendaftaran hanya menerima alamat Gmail (@gmail.com). Dukungan email lain menyusul."
+          );
+        }
         if (form.elements["_gotcha"]?.value) return showSuccess();
 
         const turnstileToken = form.elements["cf-turnstile-response"]?.value;
