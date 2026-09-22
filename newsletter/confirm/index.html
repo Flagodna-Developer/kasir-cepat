@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Konfirmasi Langganan — KasirCepat</title>
-    <!-- Token ada di URL: jangan bocor lewat Referer, dan jangan diindeks -->
     <meta name="referrer" content="no-referrer" />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -150,14 +149,14 @@
           <section class="cn-state" id="state-loading">
             <div class="cn-spinner" aria-hidden="true"></div>
             <h1 tabindex="-1">Mengaktifkan langganan…</h1>
-            <p>Mohon tunggu sebentar.</p>
+            <p class="cn-msg">Mohon tunggu sebentar.</p>
           </section>
 
           <!-- Berhasil -->
           <section class="cn-state" id="state-success" hidden>
             <div class="cn-icon cn-icon-ok" aria-hidden="true">✓</div>
             <h1 tabindex="-1">Langganan aktif</h1>
-            <p>
+            <p class="cn-msg">
               Terima kasih. Newsletter KasirCepat akan dikirim ke email Anda.
               Anda bisa berhenti kapan saja lewat tautan di setiap email.
             </p>
@@ -175,7 +174,7 @@
           <section class="cn-state" id="state-invalid" hidden>
             <div class="cn-icon cn-icon-warn" aria-hidden="true">!</div>
             <h1 tabindex="-1">Tautan tidak bisa dipakai</h1>
-            <p>
+            <p class="cn-msg">
               Tautan konfirmasi berlaku 15 menit dan hanya bisa dipakai sekali.
               Jika Anda sudah mengkliknya, langganan Anda mungkin sudah aktif.
               Jika belum, daftar lagi untuk mendapatkan tautan baru.
@@ -189,7 +188,7 @@
           <section class="cn-state" id="state-error" hidden>
             <div class="cn-icon cn-icon-err" aria-hidden="true">×</div>
             <h1 tabindex="-1">Belum berhasil</h1>
-            <p>
+            <p class="cn-msg">
               Kami tidak bisa menghubungi server. Periksa koneksi internet Anda,
               lalu coba lagi. Tautan Anda masih berlaku selama 15 menit sejak
               email dikirim.
@@ -284,10 +283,27 @@
         "https://api.flagodna.my.id/api/kasircepat/newsletter/confirm";
 
       const states = ["loading", "success", "invalid", "error"];
-      function show(name) {
+
+      // Default copy per state — restored when API doesn't provide a message
+      const defaults = {
+        success:
+          "Terima kasih. Newsletter KasirCepat akan dikirim ke email Anda. Anda bisa berhenti kapan saja lewat tautan di setiap email.",
+        invalid:
+          "Tautan konfirmasi berlaku 15 menit dan hanya bisa dipakai sekali. Jika Anda sudah mengkliknya, langganan Anda mungkin sudah aktif. Jika belum, daftar lagi untuk mendapatkan tautan baru.",
+        error:
+          "Kami tidak bisa menghubungi server. Periksa koneksi internet Anda, lalu coba lagi. Tautan Anda masih berlaku selama 15 menit sejak email dikirim.",
+      };
+
+      function show(name, message) {
         states.forEach((s) => {
           document.getElementById("state-" + s).hidden = s !== name;
         });
+
+        const p = document.querySelector("#state-" + name + " .cn-msg");
+        if (p) {
+          p.textContent = message || defaults[name] || p.textContent;
+        }
+
         document.querySelector("#state-" + name + " h1").focus();
       }
 
@@ -306,9 +322,29 @@
             },
             body: JSON.stringify({ token }),
           });
-          if (res.ok) return show("success");
-          if ([400, 404, 410, 422].includes(res.status)) return show("invalid");
-          show("error");
+
+          let payload = null;
+          try {
+            payload = await res.json();
+          } catch {
+            // non-JSON — fall through to status handling
+          }
+
+          // The Worker returns { error: "..." } on failures and
+          // { success: true, message: "..." } on success.
+          const apiMessage = payload?.error || payload?.message || null;
+
+          if (res.ok) {
+            return show("success", apiMessage);
+          }
+
+          // 4xx meaning "bad token"
+          if ([400, 404, 410, 422].includes(res.status)) {
+            return show("invalid", apiMessage);
+          }
+
+          // Everything else (403, 500, 502, ...)
+          show("error", apiMessage);
         } catch (_) {
           show("error");
         }
